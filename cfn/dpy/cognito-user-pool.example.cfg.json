@@ -1,0 +1,18 @@
+{
+  "Parameters": {
+    "environment": "Example",
+    "referenceACMCertArn": "arn:aws:acm:us-east-1:12345678:certificate/xxxxxx",
+    "referenceAppEndpoint": "/example/birdbanding/client-app/endpoint",
+    "referenceEndpoint": "/example/birdbanding/client/endpoint",
+    "referenceUserPoolIdpManagementArn": "/example/birdbanding/lambda/manage-cognito-user-pool-idp-function/arn",
+    "referencePostAuthenticationLambdaArn": "arn:aws:lambda:ap-southeast-2:12345678:function:example-birdbanding-banders-postAuthentication",
+    "samlMetadataDocument": "https://example.org/FederationMetadata/2007-06/FederationMetadata.xml",
+    "samlProviderIdentifier": "conservation-active-directory",
+    "samlProviderName": "Conservation-Active-Directory",
+    "serviceName": "birdbanding",
+    "referenceCognitoEmailSendingAccountAddress": "text@example.org",
+    "referenceCognitoEmailSendingAccountArn": "arn:aws:ses:us-east-1:12345678:identity/test@example.org",
+    "referenceCognitoCustomDomain": "",
+    "referenceGisCloudfrontDomain": "xxxxxxxx.cloudfront.net"
+  }
+}

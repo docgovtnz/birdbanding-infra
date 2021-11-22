@@ -1,0 +1,7 @@
+{
+  "Parameters" : {
+  	"logBucketName": "",
+		"CurrentTransToGlacierAfter": 30,
+		"NonCurrentTransToGlacierAfter": 30
+  }
+}

@@ -1,0 +1,23 @@
+
+cd ~/birdbanding/doc-birdbanding-infra/src/cfn-custom-resources
+
+echo Deploying Cloudformation Custom Resource Functions...
+aws cloudformation package --template-file ./cfn-custom-resources.sam.yaml --output-template-file cfn-custom-resources.cf.yaml --s3-bucket doc-serverlessdeploymentbucket-example --s3-prefix birdbanding
+python3 ../../dpy/substitute-json-parameters.py -t cfn-custom-resources.template.cfg.json -e Example
+aws cloudformation deploy --template-file ./cfn-custom-resources.cf.yaml --stack-name example-birdbanding-cfn-custom-resources --capabilities CAPABILITY_IAM --parameter-overrides $(jq -r '.Parameters | keys[] as $k | "\($k)=\(.[$k])"' cfn-custom-resources.example.cfg.json)
+
+
+cd ~/birdbanding/doc-birdbanding-infra
+
+echo Deploying Domain Configuration Pre-Requisites...
+aws cloudformation deploy --region us-east-1 --template-file ./cfn/pre/domain-configuration.cf.yaml --stack-name example-birdbanding-domain-configuration --parameter-overrides $(jq -r '.Parameters | keys[] as $k | "\($k)=\(.[$k])"' ./cfn/pre/domain-configuration.example.cfg.json)
+
+echo Deploying Cognito Resources...
+python3 ./dpy/substitute-json-parameters.py -t ./cfn/dpy/cognito-user-pool.template.cfg.json -e Example
+aws cloudformation deploy --template-file ./cfn/dpy/cognito-user-pool.cf.yaml --stack-name example-birdbanding-cognito --capabilities CAPABILITY_NAMED_IAM --parameter-overrides $(jq -r '.Parameters | keys[] as $k | "\($k)=\(.[$k])"' ./cfn/dpy/cognito-user-pool.example.cfg.json)
+
+echo Deploying Staging Resources...
+aws cloudformation deploy --template-file ./cfn/dpy/staging-resources.cf.yaml --stack-name example-birdbanding-staging-resources --capabilities CAPABILITY_NAMED_IAM --parameter-overrides $(jq -r '.Parameters | keys[] as $k | "\($k)=\(.[$k])"' ./cfn/dpy/staging-resources.example.cfg.json)
+
+echo Deploying Documentation Resources...
+aws cloudformation deploy --template-file ./cfn/dpy/documentation.cf.yaml --stack-name example-birdbanding-documentation --capabilities CAPABILITY_NAMED_IAM --parameter-overrides $(jq -r '.Parameters | keys[] as $k | "\($k)=\(.[$k])"' ./cfn/dpy/documentation.example.cfg.json)

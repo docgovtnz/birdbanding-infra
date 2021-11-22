@@ -1,0 +1,17 @@
+{
+  "Parameters" : {
+  "serviceName": "birdbanding",
+  "environment": "Example",
+  "DBName": "birdbanding",
+  "DBSnapshotArn": "arn:aws:rds:ap-southeast-2:12345678:cluster-snapshot:example-birdbanding-aurora-datastore-snapshot-example-birdbanding-aurora-datastore-xxxxxxxx",
+  "referenceLambdaSubnetIdList": "subnet-xxxxxxxx,subnet-xxxxxxxx,subnet-xxxxxxxx",
+  "referenceLambdaSecurityGroupId": "sg-xxxxxxxx",  
+  "referenceVpcId": "vpc-xxxxxxxx",
+  "referenceClusterSecurityGroupId": "",
+  "referenceSubnetIdList": "subnet-xxxxxxxx,subnet-xxxxxxxx,subnet-xxxxxxxx",
+  "referenceBastionSecurityGroupId": "",
+  "referenceZoneStack": "example-util-private-zone",
+  "referenceAlertStack": "",
+  "referenceUserAssetsS3BucketArn": "/example/birdbanding/user-assets/bucket/arn"
+  }
+}

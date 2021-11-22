@@ -1,0 +1,5 @@
+
+cd ~/birdbanding/doc-birdbanding-infra/cfn/pre
+
+echo Deploying CI/CD Pipeline Resources...
+aws cloudformation deploy --template-file ./doc-dataservice-cicd-resources.cf.yaml --stack-name example-birdbanding-cicd-resources --capabilities CAPABILITY_NAMED_IAM --s3-bucket doc-serverlessdeploymentbucket-example --parameter-overrides $(jq -r '.Parameters | keys[] as $k | "\($k)=\(.[$k])"' doc-dataservice-cicd-resources.example.cfg.json)

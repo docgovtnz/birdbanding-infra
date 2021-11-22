@@ -1,0 +1,7 @@
+{
+  "Parameters": {
+    "environment": "Example",
+    "serviceName": "birdbanding",
+    "kmsKeyARN": ""
+  }
+}

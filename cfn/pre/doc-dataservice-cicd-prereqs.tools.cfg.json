@@ -1,0 +1,7 @@
+{
+  "Parameters" : {
+  	"serviceName": "birdbanding",
+	"exampleAccountNumber":	12345678,
+	"crossAccountCondition": "true"
+  }
+}

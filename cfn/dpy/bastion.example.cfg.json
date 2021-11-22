@@ -1,0 +1,20 @@
+{
+  "Parameters" : {
+    "serviceName": "birdbanding",
+    "environment": "Example",
+    "remoteAccessCIDR": "",
+    "keyPairName": "",
+    "bastionInstanceType": "t3.micro",
+    "logsRetentionInDays": "14",
+    "notificationList": "test@example.org",
+    "bastionTenancy": "default",
+    "enableBanner": false,
+    "bastionBanner": "https://aws-quickstart.s3.amazonaws.com/quickstart-linux-bastion/scripts/banner_message.txt",
+    "enableTCPForwarding": false,
+    "enableX11Forwarding": false,
+    "osImageOverride": "",
+    "referenceVpcId": "vpc-xxxxxxxx",
+    "referenceVpcCidrBlock": "10.220.0.0/16",
+    "referenceVpcPublicSubnets": ["subnet-xxxxxxxx", "subnet-xxxxxxxx", "subnet-xxxxxxxx"]
+  }
+}

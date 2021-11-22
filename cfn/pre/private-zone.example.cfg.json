@@ -1,0 +1,6 @@
+{
+  "Parameters" : {
+    "environment" : "Example",
+    "vpcId" : "vpc-xxxxxxxx"
+  }
+}

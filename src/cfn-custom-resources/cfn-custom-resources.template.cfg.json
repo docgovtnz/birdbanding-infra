@@ -1,0 +1,6 @@
+{
+  "Parameters" : {
+    "serviceName": "birdbanding",
+    "environment": "$ENV"
+  }
+}

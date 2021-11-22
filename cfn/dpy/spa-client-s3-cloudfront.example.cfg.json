@@ -1,0 +1,13 @@
+{
+  "Parameters": {
+    "environment": "Example",
+    "serviceName": "birdbanding",
+    "referenceACMCertArn": "arn:aws:acm:us-east-1:12345678:certificate/xxxxxx",
+    "wafACLId": "xxxxxx",
+    "logBucketName": "",
+    "uploadQueuePrefix": "event-spreadsheet/",
+    "uploadQueueSuffix": ".xlsx",
+    "uploadQueueArn": "arn:aws:sqs:ap-southeast-2:12345678:example-birdbanding-data-upload-queue",
+    "referencePublicZoneId": "/example/birdbanding/route53/public-zone/id" 
+  }
+}

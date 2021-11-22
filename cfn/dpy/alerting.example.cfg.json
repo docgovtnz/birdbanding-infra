@@ -1,0 +1,11 @@
+{
+  "Parameters" : {
+    "environment" : "Example",
+    "serviceName" : "birdbanding",
+    "primaryEmail": "test@example.org",
+    "secondaryEmail": "",
+    "httpEndpoint": "",
+    "httpsEndpoint": "",
+    "fallbackEmail": "test@example.org"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "Parameters" : {
+  	"serviceName": "birdbanding",
+	"exampleAccountNumber":	00000000,
+
+	"referenceInfraSourceRepoName":	"doc-birdbanding-infra",
+	"infraSourceRepoTriggerBranchName":	"master",
+
+	"referenceServiceSourceRepoName": "doc-birdbanding-source",
+	"serviceSourceRepoTriggerBranchName": "master",
+	"includeLambdaLayerDeployment": "true",
+	"includeDataLakeIntegration": "false",
+
+	"referenceClientAppSourceRepoName":	"doc-birdbanding-client",
+	"clientAppSourceRepoTriggerBranchName":	"master",
+	
+	"referenceCFNValidationFunctionnName": "utility-cicd-cloudformation-validation",		
+	"includeKatalonDeployment":	"false",
+	"newmanTestClientID": "xxxxx",
+	"newmanTestSecretID": "example/birdbanding/automated-testing",
+
+	"referenceArtifactBucketName": "birdbanding-cicd-prereqs-pipelineartifactbucket-xxxx",
+	"referenceTestingResultsBucketName": "birdbanding-cicd-prereqs-testingresultsbucket-xxxx",
+
+	"referenceAlertStack": "",
+	
+	"referenceExamplePortalBucketNameSuffix": "doc-example-portal-artifacts",
+	"referenceKMSKeyArn": "arn:aws:kms:ap-southeast-2:00000000:key/xxxxxx",
+
+	"crossAccountCondition": "true"
+  }
+}
